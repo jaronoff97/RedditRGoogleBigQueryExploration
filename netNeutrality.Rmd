@@ -2,7 +2,9 @@
 title: "Net Neutrality"
 author: "Jacob Aronoff"
 date: "11/8/2017"
-output: html_document
+output:
+  pdf_document: default
+  html_document: default
 ---
 
 ``` {r setup, echo=FALSE}
@@ -207,17 +209,17 @@ net.neutrality.t.getCommentFreqGraph <- getCommentFreqGraph()
 ```
 
 ``` {r graphs}
-ggplot(aes(x = net.neutrality.t.compileDataPerDay$time, y = net.neutrality.t.compileDataPerDay$score), data = net.neutrality.t.compileDataPerDay) + geom_line() + ggtitle("Orlando")
-ggplot(aes(x = net.neutrality.t.compileDataPerDay$time, y = net.neutrality.t.compileDataPerDay$numComments), data = net.neutrality.t.compileDataPerDay) + geom_line() + ggtitle("Orlando")
+ggplot(aes(x = net.neutrality.t.compileDataPerDay$time, y = net.neutrality.t.compileDataPerDay$score), data = net.neutrality.t.compileDataPerDay) + geom_line() + ggtitle("Net Neutrality")
+ggplot(aes(x = net.neutrality.t.compileDataPerDay$time, y = net.neutrality.t.compileDataPerDay$numComments), data = net.neutrality.t.compileDataPerDay) + geom_line() + ggtitle("Net Neutrality")
 # - - - - - - - - - - - - - - - - - - -
-ggplot(net.neutrality.t.countForSubreddit, aes(x = subreddit, y = cnt)) + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + ggtitle("Orlando")
+ggplot(net.neutrality.t.countForSubreddit, aes(x = subreddit, y = cnt)) + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + ggtitle("Net Neutrality")
 # - - - - - - - - - - - - - - - - - - -
-ggplot(net.neutrality.t.getLinksForPosts, aes(x = Domain, y = Count)) + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + ggtitle("Orlando")
+ggplot(net.neutrality.t.getLinksForPosts, aes(x = Domain, y = Count)) + geom_bar(stat = "identity") + theme(axis.text.x = element_text(angle = 90, hjust = 1)) + ggtitle("Net Neutrality")
 # - - - - - - - - - - - - - - - - - - -
 wordcloud(words = net.neutrality.t.getMostUsedWords$Word, freq = net.neutrality.t.getMostUsedWords$Count, min.freq = 50,
           max.words=200, random.order=FALSE, rot.per=0.20, scale=c(4,.9),
           colors=brewer.pal(9,"BuGn")[-(1:4)])
 # - - - - - - - - - - - - - - - - - - -
-ggplot(aes(x = net.neutrality.t.getCommentFreqGraph$created_utc, y = net.neutrality.t.getCommentFreqGraph$score), data = net.neutrality.t.getCommentFreqGraph) + geom_line() + ggtitle("Orlando")
+ggplot(aes(x = net.neutrality.t.getCommentFreqGraph$created_utc, y = net.neutrality.t.getCommentFreqGraph$score), data = net.neutrality.t.getCommentFreqGraph) + geom_line() + ggtitle("Net Neutrality")
 ```
 
